@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio de Páscoa 🐣</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header>
+  <span class="deco" style="top:10%;left:5%;font-size:3rem">🐣</span>
+  <span class="deco" style="top:20%;right:8%;font-size:2.5rem">🌸</span>
+  <span class="deco" style="bottom:25%;left:12%;font-size:2rem">🍫</span>
+  <span class="deco" style="bottom:20%;right:5%;font-size:3.5rem">🌷</span>
+  <div class="header-badge">🐰 Encomendas 2026</div>
+  <h1>Cardápio de Páscoa</h1>
+  <p>Chocolates artesanais com muito amor 🍫✨</p>
+</header>
+
+<main>
+
+  <!-- ===================== ABAS ===================== -->
+  <div class="nav-tabs">
+    <button class="nav-tab active" id="tab-menu" onclick="showPage('menu')">
+      🍫 Cardápio
+    </button>
+    <button class="nav-tab" id="tab-cart" onclick="showPage('cart')">
+      🛒 Meu Pedido
+      <span class="badge" id="cart-badge" style="display:none">0</span>
+    </button>
+  </div>
+
+
+  <!-- ================================================
+       PÁGINA: CARDÁPIO
+  ================================================ -->
+  <div id="page-menu" class="active">
+
+    <p class="section-title">🥚 Ovos de Páscoa</p>
+
+    <!-- ──────────────────────────────────────────────
+         PRODUTO 1 — Ovo Tablete (200g) — R$ 40,00
+         Regra: 1 ou 2 sabores tradicionais.
+                Com 2 → vira Misto automaticamente.
+                3º sabor é bloqueado pelo sistema.
+    ────────────────────────────────────────────── -->
+    <div class="product-card">
+
+      <div class="product-image">
+       
+          <img src="fotos/ovo-tablete.jpg" alt="Ovo Tablete 200g">
+         
+      
+      </div>
+
+      <div class="product-body">
+        <div class="product-header">
+          <div>
+            <div class="product-name">Ovo Tablete</div>
+            <span class="product-weight">200g</span>
+          </div>
+          <div class="product-price">R$ 40,00</div>
+        </div>
+        <p class="product-desc">
+          Ovo artesanal recheado. Escolha 1 ou 2 sabores —
+          com 2 sabores vira um delicioso ovo misto!
+        </p>
+
+        <div class="flavor-section">
+          <div class="flavor-label">
+            Escolha os Sabores
+            <span class="flavor-counter" id="p1-counter">0/2</span>
+          </div>
+          <div class="flavor-grid">
+            <button class="flavor-btn" data-product="p1" data-flavor="brigadeiro"
+                    onclick="toggleFlavor('p1','brigadeiro',this)">
+              <span class="flavor-dot dot-brigadeiro"></span> Brigadeiro
+            </button>
+            <button class="flavor-btn" data-product="p1" data-flavor="beijinho"
+                    onclick="toggleFlavor('p1','beijinho',this)">
+              <span class="flavor-dot dot-beijinho"></span> Beijinho
+            </button>
+            <button class="flavor-btn" data-product="p1" data-flavor="ninho"
+                    onclick="toggleFlavor('p1','ninho',this)">
+              <span class="flavor-dot dot-ninho"></span> Ninho
+            </button>
+            <button class="flavor-btn" data-product="p1" data-flavor="bicho"
+                    onclick="toggleFlavor('p1','bicho',this)">
+              <span class="flavor-dot dot-bicho"></span> Bicho de Pé
+            </button>
+          </div>
+          <!-- Aparece automaticamente ao selecionar 2 sabores -->
+          <div class="misto-badge" id="p1-misto">
+            ✨ Ovo Misto — combinação especial de 2 sabores!
+          </div>
+        </div>
+
+        <button class="btn-add" id="p1-btn" onclick="addToCart('p1')" disabled>
+          + Adicionar ao Pedido
+        </button>
+      </div>
+    </div><!-- /ovo tablete -->
+
+
+    <!-- ──────────────────────────────────────────────
+         PRODUTO 2 — 02 Mini Ovos (50g cada) — R$ 24,00
+         Regra: 1 sabor → ambos iguais.
+                2 sabores → cada mini ovo tem o seu.
+                Máximo absoluto: 2 sabores.
+    ────────────────────────────────────────────── -->
+    <div class="product-card">
+
+      <div class="product-image">
+        <img src="fotos/mini-ovos.jpg" alt="2 Mini Ovos 50g">
+      
+      </div>
+
+      <div class="product-body">
+        <div class="product-header">
+          <div>
+            <div class="product-name">02 Mini Ovos</div>
+            <span class="product-weight">50g cada</span>
+          </div>
+          <div class="product-price">R$ 24,00</div>
+        </div>
+        <p class="product-desc">
+          1 sabor = ambos iguais.
+          2 sabores = um para cada mini ovo.
+        </p>
+
+        <div class="flavor-section">
+          <div class="flavor-label">
+            Escolha os Sabores
+            <span class="flavor-counter" id="p2-counter">0/2</span>
+          </div>
+          <div class="flavor-grid">
+            <button class="flavor-btn" data-product="p2" data-flavor="brigadeiro"
+                    onclick="toggleFlavor('p2','brigadeiro',this)">
+              <span class="flavor-dot dot-brigadeiro"></span> Brigadeiro
+            </button>
+            <button class="flavor-btn" data-product="p2" data-flavor="beijinho"
+                    onclick="toggleFlavor('p2','beijinho',this)">
+              <span class="flavor-dot dot-beijinho"></span> Beijinho
+            </button>
+            <button class="flavor-btn" data-product="p2" data-flavor="ninho"
+                    onclick="toggleFlavor('p2','ninho',this)">
+              <span class="flavor-dot dot-ninho"></span> Ninho
+            </button>
+            <button class="flavor-btn" data-product="p2" data-flavor="bicho"
+                    onclick="toggleFlavor('p2','bicho',this)">
+              <span class="flavor-dot dot-bicho"></span> Bicho de Pé
+            </button>
+          </div>
+          <div class="misto-badge" id="p2-misto">
+            🥚🥚 Mini Ovo 1 e Mini Ovo 2 com sabores diferentes!
+          </div>
+        </div>
+
+        <button class="btn-add" id="p2-btn" onclick="addToCart('p2')" disabled>
+          + Adicionar ao Pedido
+        </button>
+      </div>
+    </div><!-- /2 mini ovos -->
+
+
+    <!-- ──────────────────────────────────────────────
+         PRODUTO 3 — Mini Ovo + 2 Brigadeiros — R$ 22,00
+         Regra: Mini ovo → qualquer sabor tradicional.
+                Brigadeiros → só Brigadeiro, Ninho, Beijinho.
+                Bicho de Pé PROIBIDO nos brigadeiros.
+                Brigadeiro 1 e 2 são subgrupos independentes.
+    ────────────────────────────────────────────── -->
+    <div class="product-card">
+
+      <div class="product-image">
+        <!-- 📸 FOTO: <img src="fotos/combo-mini-ovo.jpg" alt="Mini Ovo + 2 Brigadeiros"> -->
+        <span class="product-image-icon">🥚🍬</span>
+        <span class="product-image-label">Adicionar foto</span>
+      </div>
+
+      <div class="product-body">
+        <div class="product-header">
+          <div>
+            <div class="product-name">Mini Ovo + 2 Brigadeiros</div>
+            <span class="product-weight">Combo especial</span>
+          </div>
+          <div class="product-price">R$ 22,00</div>
+        </div>
+        <p class="product-desc">
+          Um mini ovo + 2 brigadeiros artesanais.
+          Cada brigadeiro pode ter sabor diferente!
+        </p>
+
+        <!-- Sabor do Mini Ovo (todos os 4 sabores disponíveis) -->
+        <div class="flavor-section">
+          <div class="flavor-label">
+            Sabor do Mini Ovo
+            <span class="flavor-counter" id="p3-egg-counter">0/1</span>
+          </div>
+          <div class="flavor-grid">
+            <button class="flavor-btn" data-product="p3-egg" data-flavor="brigadeiro"
+                    onclick="toggleFlavorSingle('p3-egg','brigadeiro',this)">
+              <span class="flavor-dot dot-brigadeiro"></span> Brigadeiro
+            </button>
+            <button class="flavor-btn" data-product="p3-egg" data-flavor="beijinho"
+                    onclick="toggleFlavorSingle('p3-egg','beijinho',this)">
+              <span class="flavor-dot dot-beijinho"></span> Beijinho
+            </button>
+            <button class="flavor-btn" data-product="p3-egg" data-flavor="ninho"
+                    onclick="toggleFlavorSingle('p3-egg','ninho',this)">
+              <span class="flavor-dot dot-ninho"></span> Ninho
+            </button>
+            <button class="flavor-btn" data-product="p3-egg" data-flavor="bicho"
+                    onclick="toggleFlavorSingle('p3-egg','bicho',this)">
+              <span class="flavor-dot dot-bicho"></span> Bicho de Pé
+            </button>
+          </div>
+        </div>
+
+        <!-- Subgrupo Brigadeiros (Bicho de Pé NÃO aparece aqui) -->
+        <div class="subgroup">
+          <div class="subgroup-title">🍬 Sabores dos Brigadeiros</div>
+         
+
+          <!-- Brigadeiro 1 -->
+          <div class="flavor-section">
+            <div class="flavor-label">
+              Brigadeiro 1
+              <span class="flavor-counter" id="p3-b1-counter">0/1</span>
+            </div>
+            <div class="flavor-grid">
+              <button class="flavor-btn" data-product="p3-b1" data-flavor="brigadeiro"
+                      onclick="toggleFlavorSingle('p3-b1','brigadeiro',this)">
+                <span class="flavor-dot dot-brigadeiro"></span> Brigadeiro
+              </button>
+              <button class="flavor-btn" data-product="p3-b1" data-flavor="ninho"
+                      onclick="toggleFlavorSingle('p3-b1','ninho',this)">
+                <span class="flavor-dot dot-ninho"></span> Ninho
+              </button>
+              <button class="flavor-btn" data-product="p3-b1" data-flavor="beijinho"
+                      onclick="toggleFlavorSingle('p3-b1','beijinho',this)">
+                <span class="flavor-dot dot-beijinho"></span> Beijinho
+              </button>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Brigadeiro 2 -->
+          <div class="flavor-section" style="margin-bottom:0">
+            <div class="flavor-label">
+              Brigadeiro 2
+              <span class="flavor-counter" id="p3-b2-counter">0/1</span>
+            </div>
+            <div class="flavor-grid">
+              <button class="flavor-btn" data-product="p3-b2" data-flavor="brigadeiro"
+                      onclick="toggleFlavorSingle('p3-b2','brigadeiro',this)">
+                <span class="flavor-dot dot-brigadeiro"></span> Brigadeiro
+              </button>
+              <button class="flavor-btn" data-product="p3-b2" data-flavor="ninho"
+                      onclick="toggleFlavorSingle('p3-b2','ninho',this)">
+                <span class="flavor-dot dot-ninho"></span> Ninho
+              </button>
+              <button class="flavor-btn" data-product="p3-b2" data-flavor="beijinho"
+                      onclick="toggleFlavorSingle('p3-b2','beijinho',this)">
+                <span class="flavor-dot dot-beijinho"></span> Beijinho
+              </button>
+            </div>
+          </div>
+        </div><!-- /subgroup -->
+
+        <button class="btn-add" id="p3-btn" onclick="addToCart('p3')" disabled>
+          + Adicionar ao Pedido
+        </button>
+      </div>
+    </div><!-- /mini ovo + brigadeiros -->
+
+
+    <!-- ──────────────────────────────────────────────
+         PRODUTO 4 — Pirulito de Chocolate — R$ 7,00/un
+         Regra: sem sabor. Controle simples de quantidade.
+    ────────────────────────────────────────────── -->
+    <p class="section-title">🍭 Pirulitos</p>
+
+    <div class="product-card">
+
+      <div class="product-image">
+         <img src="fotos/pirulito.jpg" alt="Pirulito de Chocolate">
+       
+      </div>
+
+      <div class="product-body">
+        <div class="product-header">
+          <div>
+            <div class="product-name">Pirulito de Chocolate</div>
+            <span class="product-weight">Unidade</span>
+          </div>
+          <div class="product-price">R$ 7,00 / un</div>
+        </div>
+        <p class="product-desc">
+          Pirulito artesanal de chocolate. Escolha a quantidade desejada.
+        </p>
+
+        <div class="qty-control">
+          <button class="qty-btn" id="p4-minus" onclick="changeQty(-1)" disabled>−</button>
+          <span class="qty-display" id="p4-qty">0</span>
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+          <span class="qty-price" id="p4-price">R$ 0,00</span>
+        </div>
+
+        <button class="btn-add" id="p4-btn" onclick="addToCart('p4')" disabled>
+          + Adicionar ao Pedido
+        </button>
+      </div>
+    </div><!-- /pirulito -->
+
+  </div><!-- /page-menu -->
+
+
+  <!-- ================================================
+       PÁGINA: MEU PEDIDO
+  ================================================ -->
+  <div id="page-cart">
+
+    <!-- Dados do cliente -->
+    <div class="cart-section">
+      <p class="section-title" style="margin-top:0">👤 Seus Dados</p>
+
+      <div class="form-group">
+        <label class="form-label" for="customer-name">Nome completo *</label>
+        <input class="form-input" type="text" id="customer-name"
+               placeholder="Ex: Maria Silva" maxlength="60" autocomplete="name">
+      </div>
+
+      <div class="form-group" style="margin-bottom:0">
+        <label class="form-label" for="customer-phone">WhatsApp (opcional)</label>
+        <input class="form-input" type="tel" id="customer-phone"
+               placeholder="(11) 99999-9999" autocomplete="tel">
+      </div>
+    </div>
+
+    <!-- Lista de itens -->
+    <div class="cart-section">
+      <p class="section-title" style="margin-top:0">🛒 Itens do Pedido</p>
+      <div id="cart-items-container">
+        <div class="empty-state">
+          <div class="empty-state-icon">🧺</div>
+          <p>Nenhum item ainda.<br>Volte ao cardápio e adicione produtos!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Total + botão WhatsApp (aparece só quando há itens) -->
+    <div class="cart-section" id="cart-total-section" style="display:none">
+
+      <div class="order-summary">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="summary-subtotal">R$ 0,00</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total do Pedido</span>
+          <span id="summary-total">R$ 0,00</span>
+        </div>
+      </div>
+
+      <p class="text-muted" style="text-align:center;margin:.75rem 0">
+        ⚠️ Pagamento combinado diretamente com a doceria.
+      </p>
+
+      <button class="btn-whatsapp" onclick="sendWhatsApp()">
+        <!-- Ícone oficial do WhatsApp em SVG inline -->
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Enviar Pedido via WhatsApp
+      </button>
+
+    </div><!-- /cart-total-section -->
+
+  </div><!-- /page-cart -->
+
+</main>
+
+<!-- Notificação flutuante -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
+```
+
