@@ -36,9 +36,9 @@ const state = {
 // 2. DEFINIÇÕES DE PRODUTOS E SABORES
 // ─────────────────────────────────────────────────────────
 const PRODUCTS = {
-  p1: { name: 'Ovo Tablete',              weight: '200g',     price: 40, emoji: '🥚',   maxFlavors: 2 },
-  p2: { name: '02 Mini Ovos',             weight: '50g cada', price: 24, emoji: '🥚🥚', maxFlavors: 2 },
-  p3: { name: 'Mini Ovo + 2 Brigadeiros', weight: 'Combo',    price: 22, emoji: '🥚🍬' },
+  p1: { name: 'Ovo Tablete',              weight: '200g',     price: 40, emoji: '🍬',   maxFlavors: 2 },
+  p2: { name: '02 Mini Ovos',             weight: '50g cada', price: 24, emoji: '🍬', maxFlavors: 2 },
+  p3: { name: 'Mini Ovo + 2 Brigadeiros', weight: 'Combo',    price: 22, emoji: '🍬' },
   p4: { name: 'Pirulito de Chocolate',    weight: 'Unidade',  price: 7,  emoji: '🍭'   },
 };
 
@@ -418,7 +418,7 @@ function sendWhatsApp() {
   }
 
   // ── ALTERE AQUI ──────────────────────────────────────
-  const STORE_PHONE = '5511999999999';
+  const STORE_PHONE = '5519997125214';
   // ─────────────────────────────────────────────────────
 
   const now     = new Date();
