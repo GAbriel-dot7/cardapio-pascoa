@@ -418,7 +418,7 @@ function sendWhatsApp() {
   }
 
   // ── ALTERE AQUI ──────────────────────────────────────
-  const STORE_PHONE = '5519997125214';
+  const STORE_PHONE = '5519997125214'; 
   // ─────────────────────────────────────────────────────
 
   const now     = new Date();
@@ -429,7 +429,7 @@ function sendWhatsApp() {
   let msg = `🐣 *PEDIDO DE PÁSCOA* 🍫\n`;
   msg    += `━━━━━━━━━━━━━━━━━━━━━━\n`;
   msg    += `👤 *Cliente:* ${name}\n`;
-  if (phone) msg += `📱 *WhatsApp:* ${phone}\n`;
+  if (phone) msg += `📱 *Telefone:* ${phone}\n`;
   msg    += `📅 *Data:* ${dateStr}\n`;
   msg    += `🕐 *Horário:* ${timeStr}\n`;
   msg    += `━━━━━━━━━━━━━━━━━━━━━━\n\n`;
