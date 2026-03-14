@@ -501,3 +501,4 @@ function showToast(msg) {
 function _formatPrice(value) {
   return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
+/* FIM DO SCRIPT.JS */
