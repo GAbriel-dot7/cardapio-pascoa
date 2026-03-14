@@ -404,7 +404,7 @@ function _renderCartPage() {
  */
 function sendWhatsApp() {
   const name  = document.getElementById('customer-name').value.trim();
-  const phone = document.getElementById('customer-phone').value.trim();
+
 
   // Validações antes de montar a mensagem
   if (!name) {
@@ -429,7 +429,6 @@ function sendWhatsApp() {
   let msg = `🐣 *PEDIDO DE PÁSCOA* 🍫\n`;
   msg    += `━━━━━━━━━━━━━━━━━━━━━━\n`;
   msg    += `👤 *Cliente:* ${name}\n`;
-  if (phone) msg += `📱 *Telefone:* ${phone}\n`;
   msg    += `📅 *Data:* ${dateStr}\n`;
   msg    += `🕐 *Horário:* ${timeStr}\n`;
   msg    += `━━━━━━━━━━━━━━━━━━━━━━\n\n`;
